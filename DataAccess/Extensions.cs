@@ -1,16 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DataAccess
 {
     public static class Extensions
     {
-        public static IServiceCollection AddDataAccess(this IServiceCollection services)
+        public static IServiceCollection AddDataAccess(
+            this IServiceCollection services,
+            IConfiguration configuration)
         {
-            services.AddDbContext<AppContext>(x =>
-            {
-                x.UseNpgsql("Host=localhost;Database=NoteDb;Username=postgres;Password=1234");
-            });
+            var connectionString = configuration.GetConnectionString("DefaultConnection")
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseNpgsql(connectionString));
+
             return services;
         }
     }
