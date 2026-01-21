@@ -1,1 +1,5 @@
-<Solution />
+<Solution>
+  <Project Path="BusinessLogic/BusinessLogic.csproj" Id="35fa815c-5ed2-42e5-962b-388b34f4f7c5" />
+  <Project Path="DataAccess/DataAccess.csproj" Id="3241dc00-6519-4ddf-9018-18b2ea6c61bc" />
+  <Project Path="WebApi/WebApi.csproj" Id="04b247d2-f4c8-4115-84ba-36d2ba5bbd40" />
+</Solution>
